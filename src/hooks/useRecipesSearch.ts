@@ -2,9 +2,10 @@ import { recipes } from "../data/data";
 import type {Recipe}  from "../types/types";
 import { useState, useEffect } from "react";
 import { useCategories } from "../contexts/RecipesContext";
+import { useSearch } from "../contexts/SearchContext";
 
 export function useRecipeSearch(){
-const [query, setQuery] = useState<string>("")
+const { query, setQuery } = useSearch()
 const {selectedCategories, setSelectedCategories }= useCategories()
 const [results, setResults] = useState<Recipe[]>(recipes)
 

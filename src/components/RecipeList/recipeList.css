@@ -13,7 +13,7 @@
   gap: 16px;
   margin: 20px 0;
   padding: 20px 16px;
-  background: white;
+  background-color: #f7f4ff;
   border-radius: 16px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
   transition: box-shadow 0.2s;
@@ -38,7 +38,7 @@
   font-size: 21px;
   font-weight: 700;
   margin: 0 0 4px 0;
-  color: rgb(45, 45, 45);
+  color: #2b2438;
   text-align: center;
 }
 
@@ -47,7 +47,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
-  color: rgb(102, 102, 102);
+  color: #6b637b;
   margin-bottom: 8px;
 }
 
@@ -66,12 +66,13 @@
   padding: 10px 12px;
   font-size: 16px;
   color: rgb(68, 68, 68);
-  background: rgb(247, 247, 250);
+  background: #efe9ff;
   border-radius: 8px;
 }
 
 .ingredients-list {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 8px 10px;
   margin-bottom: 4px;
@@ -81,8 +82,9 @@
   margin-bottom: 4px;
   white-space: nowrap;
   padding: 3px 10px;
+  color: white;
   font-size: 16px;
-  background: rgb(233, 233, 243);
+  background: #a680ff;
   border-radius: 6px;
 }
 
@@ -105,8 +107,8 @@
   white-space: nowrap;
   padding: 3px 10px;
   font-size: 16px;
-  color: rgb(178, 59, 59);
-  background: rgb(255, 234, 234);
+  color: #8b3d74;
+  background: #f6d8ee;
   border-radius: 6px;
 }
 
@@ -116,17 +118,27 @@
   font-size: 16px;
   font-weight: 600;
   color: white;
-  background: rgb(45, 45, 45);
+  background: #7d5cff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   transition:
     transform 0.15s,
     box-shadow 0.2s;
 }
 
 .visit-recipe-btn:hover {
-  background: rgb(30, 30, 30);
+  background: #6a4be0;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
   transform: translateY(-1px);
+}
+
+.visit-recipe-icon {
+  width: 18px;
+  height: 18px;
+  color: white;
 }

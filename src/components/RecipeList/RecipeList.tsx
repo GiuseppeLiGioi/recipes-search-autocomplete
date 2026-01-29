@@ -1,6 +1,7 @@
 import { useRecipeSearch } from "../../hooks/useRecipesSearch";
 import { PiClockCountdownFill } from "react-icons/pi";
 import { BiCategoryAlt } from "react-icons/bi";
+import { GoArrowUpRight } from "react-icons/go";
 import "./recipeList.css";
 export default function RecipeList() {
   const { results } = useRecipeSearch();
@@ -54,7 +55,8 @@ export default function RecipeList() {
               </div>
 
               <button className="visit-recipe-btn" type="button">
-                Visita ricetta
+                <span className="visit-recipe-text">Visita ricetta</span>
+                <GoArrowUpRight className="visit-recipe-icon" />
               </button>
             </div>
           ))}

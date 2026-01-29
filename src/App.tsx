@@ -1,14 +1,17 @@
 import SearchBar from "./components/SearchBar/SearchBar";
 import CategoriesList from "./components/CategoriesList/CategoriesList";
 import { CategoriesProvider } from "./contexts/RecipesContext";
+import { SearchProvider } from "./contexts/SearchContext";
 import RecipeList from "./components/RecipeList/RecipeList";
 function App() {
   return (
     <>
       <CategoriesProvider>
-        <SearchBar />
-        <CategoriesList />
-        <RecipeList />
+        <SearchProvider>
+          <SearchBar />
+          <CategoriesList />
+          <RecipeList />
+        </SearchProvider>
       </CategoriesProvider>
     </>
   );
