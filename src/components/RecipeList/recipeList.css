@@ -13,14 +13,15 @@
   gap: 16px;
   margin: 20px 0;
   padding: 20px 16px;
+  font-size: 16px;
   background-color: #f7f4ff;
   border-radius: 16px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 0.07);
   transition: box-shadow 0.2s;
 }
 
 .container-recipe:hover {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 4px 24px rgb(0 0 0 / 0.13);
 }
 
 .img-recipe {
@@ -31,13 +32,14 @@
   object-fit: cover;
   margin: 0 auto;
   display: block;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 6px rgb(0 0 0 / 0.08);
 }
 
 .title-recipe {
   font-size: 21px;
   font-weight: 700;
-  margin: 0 0 4px 0;
+  margin: 0;
+  margin-bottom: 4px;
   color: #2b2438;
   text-align: center;
 }
@@ -46,7 +48,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 16px;
   color: #6b637b;
   margin-bottom: 8px;
 }
@@ -64,7 +65,6 @@
   gap: 8px;
   margin-bottom: 8px;
   padding: 10px 12px;
-  font-size: 16px;
   color: rgb(68, 68, 68);
   background: #efe9ff;
   border-radius: 8px;
@@ -83,7 +83,6 @@
   white-space: nowrap;
   padding: 3px 10px;
   color: white;
-  font-size: 16px;
   background: #a680ff;
   border-radius: 6px;
 }
@@ -92,7 +91,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px 8px;
+  gap: 8px;
 }
 
 .allergens-label {
@@ -106,7 +105,6 @@
   margin-bottom: 4px;
   white-space: nowrap;
   padding: 3px 10px;
-  font-size: 16px;
   color: #8b3d74;
   background: #f6d8ee;
   border-radius: 6px;
@@ -133,12 +131,11 @@
 
 .visit-recipe-btn:hover {
   background: #6a4be0;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.18);
   transform: translateY(-1px);
 }
 
 .visit-recipe-icon {
   width: 18px;
   height: 18px;
-  color: white;
 }
