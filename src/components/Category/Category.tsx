@@ -3,9 +3,10 @@ import { useState } from "react";
 import "./category.css";
 type CategoryProps = {
   title: string;
+  icon?: React.ReactNode;
 };
 
-export default function Category({ title }: CategoryProps) {
+export default function Category({ title, icon }: CategoryProps) {
   const [isActive, setIsActive] = useState<boolean>(false);
   const { setSelectedCategories } = useCategories();
   const normalizedTitle = title.trim().toLowerCase();
@@ -22,7 +23,12 @@ export default function Category({ title }: CategoryProps) {
           setIsActive(!isActive);
         }}
       >
-        {title}
+        {icon ? (
+          <span className="category_icon" aria-hidden="true">
+            {icon}
+          </span>
+        ) : null}
+        <span>{title}</span>
       </button>
     </div>
   );

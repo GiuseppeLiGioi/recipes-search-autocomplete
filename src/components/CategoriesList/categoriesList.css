@@ -2,7 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
-
+  gap: 12px;
   width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.container-categories::-webkit-scrollbar {
+  display: none;
 }
