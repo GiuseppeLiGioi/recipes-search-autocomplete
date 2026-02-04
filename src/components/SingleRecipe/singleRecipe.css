@@ -127,7 +127,7 @@
 }
 
 .btn-done-active {
-  color: #6a4be0;
+  color: #33ff2c;
 }
 
 .container-related-recipes {
@@ -183,4 +183,13 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.box-title-like svg,
+.box-category-time svg,
+.container-recipe-left h4 svg,
+.single-instruction svg,
+.box-info-related svg {
+  font-size: 18px;
+  display: inline-flex;
 }

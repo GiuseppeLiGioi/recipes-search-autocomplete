@@ -5,11 +5,16 @@ import { TbCategory2 } from "react-icons/tb";
 import { PiClockCountdownFill } from "react-icons/pi";
 import { BiCategory } from "react-icons/bi";
 import { CiCircleCheck } from "react-icons/ci";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./singleRecipe.css";
 export default function SingleRecipes() {
-  const [isDone, setIsDone] = useState<boolean>(false);
+  const [doneSteps, setDoneSteps] = useState<boolean[]>([]);
+
+  const toggleStep = (index: number) => {
+    setDoneSteps((prev) => prev.map((v, i) => (i === index ? !v : v)));
+  };
+
   const { id } = useParams();
   const navigate = useNavigate();
   const currentId = Number(id);
@@ -23,6 +28,11 @@ export default function SingleRecipes() {
   if (!recipe) {
     return <div>{`Nessuna Ricetta trovata con id: ${id}`}</div>;
   }
+
+  useEffect(() => {
+    if (!recipe) return;
+    setDoneSteps(recipe.instructions.map(() => false));
+  }, [recipe]);
 
   return (
     <div className="container-single-recipe">
@@ -73,19 +83,17 @@ export default function SingleRecipes() {
 
         <h5 className="semititle-recipe">Istruzioni</h5>
         <ul className="container-recipe-instructions">
-          {recipe.instructions.length > 0 &&
-            Array.isArray(recipe.instructions) &&
-            recipe.instructions.map((r, index) => (
-              <li className="single-instruction" key={index}>
-                <button
-                  className={isDone ? "btn-done-active" : "btn-done"}
-                  onClick={() => setIsDone(!isDone)}
-                >
-                  <CiCircleCheck />
-                </button>
-                <span>{r}</span>
-              </li>
-            ))}
+          {recipe.instructions.map((r, index) => (
+            <li className="single-instruction" key={index}>
+              <button
+                className={doneSteps[index] ? "btn-done-active" : "btn-done"}
+                onClick={() => toggleStep(index)}
+              >
+                <CiCircleCheck />
+              </button>
+              <span>{r}</span>
+            </li>
+          ))}
         </ul>
 
         <h5 className="semititle-recipe">Ricette Correlate</h5>
