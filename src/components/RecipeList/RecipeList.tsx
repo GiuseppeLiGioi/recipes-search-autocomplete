@@ -3,8 +3,10 @@ import { PiClockCountdownFill } from "react-icons/pi";
 import { BiCategoryAlt } from "react-icons/bi";
 import { GoArrowUpRight } from "react-icons/go";
 import "./recipeList.css";
+import { useNavigate } from "react-router-dom";
 export default function RecipeList() {
   const { results } = useRecipeSearch();
+  const navigate = useNavigate();
   return (
     <>
       <div className="container-recipes">
@@ -54,7 +56,11 @@ export default function RecipeList() {
                   )}
               </div>
 
-              <button className="visit-recipe-btn" type="button">
+              <button
+                className="visit-recipe-btn"
+                type="button"
+                onClick={() => navigate(`/recipes/${r.id}`)}
+              >
                 <span className="visit-recipe-text">Visita ricetta</span>
                 <GoArrowUpRight className="visit-recipe-icon" />
               </button>
