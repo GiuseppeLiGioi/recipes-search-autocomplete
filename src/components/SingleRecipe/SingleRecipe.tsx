@@ -10,10 +10,12 @@ import { useNavigate } from "react-router-dom";
 import { GiForkKnifeSpoon } from "react-icons/gi";
 import { BsLightbulb } from "react-icons/bs";
 import { PiChefHatDuotone } from "react-icons/pi";
+import { useLikes } from "../../contexts/LikesContext";
 import SharedButtons from "../SharedButtons/SharedButtons";
 import "./singleRecipe.css";
 export default function SingleRecipes() {
   const [doneSteps, setDoneSteps] = useState<boolean[]>([]);
+  const { favoriteIds, toggleFavorite } = useLikes();
 
   const toggleStep = (index: number) => {
     setDoneSteps((prev) => prev.map((v, i) => (i === index ? !v : v)));
@@ -49,7 +51,12 @@ export default function SingleRecipes() {
       </div>
       <div className="box-title-like">
         <h2 className="title-recipe">{recipe.title}</h2>
-        <button className="btn-like">
+        <button
+          className={
+            favoriteIds.includes(recipe.id) ? "btn-like-active" : "btn-like"
+          }
+          onClick={() => toggleFavorite(recipe.id)}
+        >
           <FaRegHeart />
           <span>Mi Piace</span>
         </button>

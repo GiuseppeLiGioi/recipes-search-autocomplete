@@ -47,6 +47,18 @@
   font-size: 14px;
 }
 
+.btn-like-active {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid #7d5cff;
+  border-radius: 10px;
+  background: #7d5cff;
+  color: #ffffff;
+  font-size: 14px;
+}
+
 .box-category-time {
   display: flex;
   gap: 10px;
