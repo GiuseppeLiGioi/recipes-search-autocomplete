@@ -8,6 +8,8 @@ import { CiCircleCheck } from "react-icons/ci";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { GiForkKnifeSpoon } from "react-icons/gi";
+import { BsLightbulb } from "react-icons/bs";
+import { PiChefHatDuotone } from "react-icons/pi";
 import SharedButtons from "../SharedButtons/SharedButtons";
 import "./singleRecipe.css";
 export default function SingleRecipes() {
@@ -158,6 +160,27 @@ export default function SingleRecipes() {
           <div className="container-share">
             <h5 className="title-share-recipe">Condividi questa ricetta:</h5>
             <SharedButtons url={sharedUrl} title={recipe.title} />
+          </div>
+        </div>
+        <h5 className="another-recipes">Altre Ricette</h5>
+        <div className="container-tips-variants">
+          <div className="container-tips">
+            <span className="icon-another-recipes">
+              <BsLightbulb />
+            </span>
+            <p className="p-another-recipes">
+              <strong>Consiglio:</strong>
+              {recipe.tips}
+            </p>
+          </div>
+          <div className="container-variants">
+            <span className="icon-another-recipes">
+              <PiChefHatDuotone />
+            </span>
+            <p className="p-another-recipes">
+              <strong>Variante:</strong>
+              {recipe.variants}
+            </p>
           </div>
         </div>
       </div>

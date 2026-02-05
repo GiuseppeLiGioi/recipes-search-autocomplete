@@ -185,6 +185,102 @@
   gap: 16px;
 }
 
+.container-recipe-nutritional {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+  background: #efe9ff;
+  border-radius: 10px;
+}
+
+.title-nutritional {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  color: #6b637b;
+}
+
+.line-divider {
+  height: 1px;
+  background: #d9cffb;
+}
+
+.values-box-recipe {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nutritional-item {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #2b2438;
+  font-size: 14px;
+}
+
+.span-nutritional {
+  color: #6b637b;
+  font-size: 13px;
+}
+
+.container-share {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title-share-recipe {
+  margin: 0;
+  font-size: 14px;
+  color: #6b637b;
+}
+
+.another-recipes {
+  margin: 0;
+  font-size: 16px;
+  color: #2b2438;
+}
+
+.container-tips-variants {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container-tips,
+.container-variants {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #2b2438;
+}
+
+.icon-another-recipes {
+  display: flex;
+  align-items: flex-start;
+}
+
+.p-another-recipes {
+  margin: 0;
+  font-size: 14px;
+  color: #2b2438;
+}
+
+.p-another-recipes strong {
+  display: inline-block;
+  margin-right: 6px;
+}
+
 .box-title-like svg,
 .box-category-time svg,
 .container-recipe-left h4 svg,

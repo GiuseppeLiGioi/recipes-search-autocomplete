@@ -1,12 +1,14 @@
 .container-buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
 }
 
 .share-button {
-  padding: 8px 16px;
+  padding: 12px 20px;
   border-radius: 12px;
   color: white;
 }
