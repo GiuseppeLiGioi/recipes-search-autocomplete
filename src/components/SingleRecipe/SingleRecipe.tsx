@@ -3,7 +3,7 @@ import { recipes } from "../../data/data";
 import { FaRegHeart } from "react-icons/fa";
 import { TbCategory2 } from "react-icons/tb";
 import { PiClockCountdownFill } from "react-icons/pi";
-import { BiCategory } from "react-icons/bi";
+import { BiCategory, BiArrowBack } from "react-icons/bi";
 import { CiCircleCheck } from "react-icons/ci";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -41,6 +41,12 @@ export default function SingleRecipes() {
 
   return (
     <div className="container-single-recipe">
+      <div className="box-back">
+        <button className="btn-back" onClick={() => navigate("/")}>
+          <BiArrowBack />
+          <span>Torna alle ricette</span>
+        </button>
+      </div>
       <div className="box-title-like">
         <h2 className="title-recipe">{recipe.title}</h2>
         <button className="btn-like">

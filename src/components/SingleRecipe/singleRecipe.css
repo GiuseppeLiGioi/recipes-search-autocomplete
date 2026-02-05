@@ -7,6 +7,22 @@
   color: #2b2438;
 }
 
+.box-back {
+  display: flex;
+}
+
+.btn-back {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid #d9cffb;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #6b637b;
+  font-size: 14px;
+}
+
 .box-title-like {
   display: flex;
   align-items: center;
