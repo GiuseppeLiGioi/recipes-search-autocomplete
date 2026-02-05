@@ -7,6 +7,8 @@ import { BiCategory } from "react-icons/bi";
 import { CiCircleCheck } from "react-icons/ci";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { GiForkKnifeSpoon } from "react-icons/gi";
+import SharedButtons from "../SharedButtons/SharedButtons";
 import "./singleRecipe.css";
 export default function SingleRecipes() {
   const [doneSteps, setDoneSteps] = useState<boolean[]>([]);
@@ -18,6 +20,7 @@ export default function SingleRecipes() {
   const { id } = useParams();
   const navigate = useNavigate();
   const currentId = Number(id);
+  const sharedUrl: string = window.location.href;
 
   const recipe = recipes.find((r) => r.id === currentId);
 
@@ -124,7 +127,40 @@ export default function SingleRecipes() {
             ))}
         </div>
       </div>
-      <div className="container-recipe-right"></div>
+      <div className="container-recipe-right">
+        <div className="container-recipe-nutritional">
+          <h5 className="title-nutritional">
+            <GiForkKnifeSpoon />
+            <span>Informazioni Nutrizionali</span>
+          </h5>
+          <div className="line-divider"></div>
+          {recipe.nutrition && (
+            <div className="values-box-recipe">
+              <p className="nutritional-item">
+                <span className="span-nutritional">Ener. Kcal</span>
+                {recipe.nutrition.energyKcal}
+              </p>
+              <p className="nutritional-item">
+                <span className="span-nutritional">Carboidrati</span>
+                {recipe.nutrition.carbohydratesG}
+              </p>
+              <p className="nutritional-item">
+                <span className="span-nutritional">Proteine</span>
+                {recipe.nutrition.proteinsG}
+              </p>
+              <p className="nutritional-item">
+                <span className="span-nutritional">Grassi</span>
+                {recipe.nutrition.fatsG}
+              </p>
+            </div>
+          )}
+          <div className="line-divider"></div>
+          <div className="container-share">
+            <h5 className="title-share-recipe">Condividi questa ricetta:</h5>
+            <SharedButtons url={sharedUrl} title={recipe.title} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
